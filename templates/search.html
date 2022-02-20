@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}
+Перевірити за'явку
+{%  endblock  %}
+{% block body %}
+<div class="container-xl">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <form action="" method="post">   
+        {{ wtf.quick_form(form) }}
+       <button class="btn btn-success mt-4" type="submit">Перевірити</button>
+   </div>  </form>
+</div>
+    </div>
+  
+
+
+</div>
+{% endblock %}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ваші за'явкі
+{%  endblock  %}
+
+  
+{% block body %}
+
+<div class="container-xl">
+
+    <div class="table-responsive">
+        <table class="table table-info table-hover table-bordered mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Ваше ім'я</th>
+                    <th scope="col">Електрона адреса</th>
+                    <th scope="col">Номер телефона</th>
+                    <th scope="col">Місто і вулиця доставкі</th>
+                    <th scope="col">Дата і час відправкі</th>
+                    <th scope="col">Дата отримання</th>
+                    <th scope="col">Товар</th>
+                    <th scope="col">Статус замовлення</th>
+
+            </thead>
+            <tbody class="">
+                {% for app in app %}
+                <tr>
+                    <td>{{  app.id }}</td>
+                    <td>{{  app.name }}</td>
+                    <td> {{  app.email }}</td>
+                    <td>{{  app.namber_phone }} </td>
+                    <td>{{  app.city_finish }} — {{  app.street_finish}}, {{app.number_home_finish}}</td>
+            
+                    <td>{{  app.date}} / {{  app.time}} </td>
+                    <td>{{  app.date_dostavki}} </td>
+                    <td>{{  app.type_wantazy}} </td>
+                    <td>{{  app.isActive}} </td>
+                </tr>
+                {% endfor %}
+
+                
+
+            
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+
+
+
