@@ -27,17 +27,33 @@
     <div class="collapse navbar-collapse  " id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Головна
+          <a class="nav-link" href="{{ url_for('index')}}">Головна
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contacts">Контакти</a>
+          <a class="nav-link" href="{{ url_for('contacts')}}">Контакти</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/price">Ціни</a>
+          <a class="nav-link" href="{{ url_for('price')}}">Ціни</a>
         </li>
+        {% if current_user.role == "Admin" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('admin.index')}}">Admin</a>
+        </li>
+        {% endif %}
+        {% if current_user.is_anonymous %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login')}}">Вхід</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout')}}">Вийти</a>
+        </li>
+        {% endif %}
+  
     </div>
   </nav>
+
   <div class="wrapper ">
 
     {% block body %}{% endblock %}
